@@ -62,7 +62,7 @@ class InteractiveRecord
   end
 
   def self.find_by(hash)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_names} = ?"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{column_name} = ?"
     DB[:conn].execute(sql, hash[hash.keys[0].to_sym])
   end
 
